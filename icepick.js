@@ -12,6 +12,15 @@
 
 var i = exports;
 
+// Support for browser
+if (typeof process === "undefined") {
+  var process = {
+    env: {
+      NODE_ENV: "development"
+    }
+  };
+}
+
 // we only care about objects or arrays for now
 function weCareAbout(val) {
   return null !== val &&
